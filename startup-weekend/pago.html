@@ -46,16 +46,16 @@
         <h2 class="text-center">Ingresa tu Direccion</h2>
         <div>
             <label for="username">Direccion</label>
-            <input class="form-control" type="text" name="CustomField1Value" id="CustomField1Value" placeholder="" required />
+            <input class="form-control" type="text" name="CustomField1Value" id="CustomField1Value" value ="testing" placeholder="" required />
         </div>
         <div class="form-group">
             <label for="email">Referencias para el delivery</label>
-            <input class="form-control" type="text" name="CustomField2Value" id="CustomField2Value" placeholder="" required />
+            <input class="form-control" type="text" name="CustomField2Value" id="CustomField2Value" value ="testing" placeholder="" required />
         </div>
         <h2 class="text-center">Ingresa el monto a pagar</h2>
         <div>
             <label for="passwordRepeat">Monto</label>
-            <input class="form-control" type="text" id="Amount" name="Amount" value=""/>
+            <input class="form-control" type="text" id="Amount" name="Amount" value="15000.00"/>
         </div>
         <h2 class="text-center">Ingresa los datos de tu tarjeta</h2>
         <div class="form-group">
@@ -132,7 +132,7 @@
         <div>
             <label>AuthHash</label>
         </div>
-        <input type="hidden" id="AuthHash" name="AuthHash" value="f21167f77785169c1f2ac3c58f2b5ac4ecbd87efaab7a5a86215af5962f920f70ba92091fc44bfb0aaf18889be13868b918d013a88712ce1c3b37e15613678ae">
+        <input type="hidden" id="AuthHash" name="AuthHash" value="7b99fd7cf2a08a702910a4cc113d56ca71bce9d31c938bdfafb714ccbe9438d05a90343396ef4eb0de313a798baed669ca85d42898955c73f8eff81d7b1b4e27">
         <input type="button"  value="Generar Hash" />
         <br /> <br />
         <input class="btn btn--form" type="submit" value="Autorizar Pago" onclick="parseAmount()" />
@@ -184,12 +184,10 @@
         function onSuccess(result) {
             $('#AuthHash').val(result);
         }
-
         function onFailure(error) {
             var div = document.getElementById('output');
             div.innerHTML = "ERROR: " + error.message;
         }
-
             function generateAuthHash() {
             var MerchantId = $('#MerchantId').val();
             var MerchantName = $('#MerchantName').val();
@@ -209,7 +207,6 @@
             var CustomField2Label = $('#CustomField2Label').val();
             var CustomField2Value = $('#CustomField2Value').val();
             var AuthKey = $('#authKey').val();
-
             google.script.run
            .withSuccessHandler(onSuccess)
            .withFailureHandler(onFailure)
