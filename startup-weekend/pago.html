@@ -1,220 +1,231 @@
 <!DOCTYPE HTML>
 <html>
-   <head>
-      <title>Apurao</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="assets/css/main.css" />
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-   </head>
-   <body class="container">
-      <nav class="navbar navbar-light" role="navigation">
-         <div class="container-fluid">
+
+<head>
+    <title>Apurao</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <base target="_top">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">       
+</head>
+
+<body class="container">
+    <nav class="navbar navbar-light" role="navigation">
+        <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header text-center">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.html">
                <img id="hz-logo" src="images/hz-logo-front.png" alt="horizontal logo">
                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="como.html">Como lo hacemos?</a></li>
-                  <li><a href="iniciarSesion.html">Iniciar Sesion</a></li>
-                  <li><a href="registrar.html">Resgistrar</a></li>
-               </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="como.html">Como lo hacemos?</a></li>
+                    <li><a href="iniciarSesion.html">Iniciar Sesion</a></li>
+                    <li><a href="registrar.html">Resgistrar</a></li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
-         </div>
-         <!-- /.container-fluid -->
-      </nav>
-      <form action="https://pruebas.azul.com.do/PaymentPage/" method="post">
-         <div class="btn-group" role="group" aria-label="...">
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <form action="https://pruebas.azul.com.do/PaymentPage/" method="post">
+        <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default">Deposito</button>
             <button type="button" class="btn btn-default">Delivery</button>
-         </div>
-         <h2 class="text-center">Ingresa tu Direccion</h2>
-         <div>
+        </div>
+        <h2 class="text-center">Ingresa tu Direccion</h2>
+        <div>
             <label for="username">Direccion</label>
             <input class="form-control" type="text" name="CustomField1Value" id="CustomField1Value" placeholder="" required />
-         </div>
-         <div class="form-group">
+        </div>
+        <div class="form-group">
             <label for="email">Referencias para el delivery</label>
             <input class="form-control" type="text" name="CustomField2Value" id="CustomField2Value" placeholder="" required />
-         </div>
-         <h2 class="text-center">Ingresa el monto a pagar</h2>
-         <div>
+        </div>
+        <h2 class="text-center">Ingresa el monto a pagar</h2>
+        <div>
             <label for="passwordRepeat">Monto</label>
-            <input class="form-control" type="text" id="Amount" name="Amount" placeholder="" required />
-         </div>
-         <h2 class="text-center">Ingresa los datos de tu tarjeta</h2>
-         <div class="form-group">
+            <input class="form-control" type="text" id="Amount" name="Amount" value=""/>
+        </div>
+        <h2 class="text-center">Ingresa los datos de tu tarjeta</h2>
+        <div class="form-group">
             <label for="passwordRepeat">Numero de Tarjeta</label>
-            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder=""  />
-         </div>
-         <div class="form-group">
+            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="" />
+        </div>
+        <div class="form-group">
             <label for="passwordRepeat">Fecha de Caducidad</label>
-            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder=""  />
-         </div>
-         <div class="form-group">
+            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="" />
+        </div>
+        <div class="form-group">
             <label for="passwordRepeat">CVC</label>
-            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder=""  />
-         </div>
-         <input class="btn btn--form" type="submit" value="Autorizar Pago" onClick="generateAuthHash()"/>
-
-
-         <!--Forcing every value needed for the Azul implementation of the API-->
-         <div hidden>
+            <input class="form-control" type="password" name="passwordRepeat" id="passwordRepeat" placeholder="" />
+        </div>
+        <!--Forcing every value needed for the Azul implementation of the API-->
+        <div hidden>
             <input type="text" id="RealMerchantID" name="MerchantId" value="39036630010" />
-         </div>
-         <div hidden>
+        </div>
+        <div hidden>
             <label>MerchantName</label>
-            <input type="text" id="MerchantName" name="MerchantName" value="Fintech" />
-         </div>
-         <div hidden>
+            <input type="text" id="MerchantName" name="MerchantName" value="Apurao" />
+        </div>
+        <div hidden>
             <label>MerchantType</label>
-            <input type="text" id="MerchantType" name="MerchantType" value="MerchantType" />
-         </div>
-         <div hidden>
+            <input type="text" id="MerchantType" name="MerchantType" value="Casa de cambio" />
+        </div>
+        <div hidden>
             <label>CurrencyCode</label>
             <input type="text" id="CurrencyCode" name="CurrencyCode" value="$" />
-         </div>
-         <div hidden>
+        </div>
+        <div hidden>
             <label>OrderNumber</label>
             <input type="text" id="OrderNumber" name="OrderNumber" value="88887771232" />
-         </div>
-         <div hidden>
+        </div>
+        <div hidden>
             <label>ITBIS</label>
             <input type="text" id="ITBIS" name="ITBIS" value="00" />
-         </div>
-         <div hidden>
-            <label>ApprovedUrl</label>
-            <input type="text" id="ApprovedUrl" name="ApprovedUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?ApprovedUrl=true" >
-         </div>
-         <div hidden>
-            <label>DeclinedUrl</label>
-            <input type="text" id="DeclinedUrl" name="DeclinedUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?DeclinedUrl=true" />
-         </div>
-         <div hidden>
-            <label>CancelUrl</label>
-            <input type="text" id="CancelUrl" name="CancelUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?CancelUrl=true" />
-         </div>
-         <div hidden>
-            <label>ResponsePostUrl</label>
-            <input type="text" id="ResponsePostUrl" name="ResponsePostUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?PostURL=true" />
-         </div>
-         <div hidden>
-                <label>UseCustomField1</label>
-                <input type="text" id="UseCustomField1" name="UseCustomField1" value="1" />
         </div>
         <div hidden>
-        <label>UseCustomField2</label>
-        <input type="text" id="UseCustomField2" name="UseCustomField2" value="1" />
-
+            <label>ApprovedUrl</label>
+            <input type="text" id="ApprovedUrl" name="ApprovedUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?ApprovedUrl=true">
+        </div>
         <div hidden>
-                <label>CustomField1Label</label>
-                <input type="text" id="CustomField1Label" name="CustomField1Label" value="Direccion" />
+            <label>DeclinedUrl</label>
+            <input type="text" id="DeclinedUrl" name="DeclinedUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?DeclinedUrl=true"
+            />
+        </div>
+        <div hidden>
+            <label>CancelUrl</label>
+            <input type="text" id="CancelUrl" name="CancelUrl" value="https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?CancelUrl=true"
+            />
+        </div>
+        <div hidden>
+            <label>ResponsePostUrl</label>
+            <input type="text" id="ResponsePostUrl" name="ResponsePostUrl" value="";
+            />
+        </div>
+        <div hidden>
+            <label>UseCustomField1</label>
+            <input type="text" id="UseCustomField1" name="UseCustomField1" value="1" />
+        </div>
+        <div hidden>
+            <label>UseCustomField2</label>
+            <input type="text" id="UseCustomField2" name="UseCustomField2" value="1" />
+        </div>
+        <div hidden>
+            <label>CustomField1Label</label>
+            <input type="text" id="CustomField1Label" name="CustomField1Label" value="Direccion" />
+        </div>
+        <div hidden>
+            <label>CustomField2Label</label>
+            <input type="text" id="CustomField2Label" name="CustomField2Label" value="Referencia" />
         </div>
         <div>
-                <label>CustomField2Label</label>
-                <input type="text" id="CustomField2Label" name="CustomField2Label" value="Referencia" />
+            <label>AuthHash</label>
         </div>
-        <div hidden>
-                <label>AuthKey</label>
-                <input type="text" id="AuthKey" name="AuthKey" value="asdhakjshdkjasdasmndajksdkjaskldga8odya9d8yoasyd98asdyaisdhoaisyd0a8sydoashd8oasydoiahdpiashd09ayusidhaos8dy0a8dya08syd0a8ssdsax" />
-        </div>
+        <input type="hidden" id="AuthHash" name="AuthHash" value="f21167f77785169c1f2ac3c58f2b5ac4ecbd87efaab7a5a86215af5962f920f70ba92091fc44bfb0aaf18889be13868b918d013a88712ce1c3b37e15613678ae">
+        <input type="button"  value="Generar Hash" />
+        <br /> <br />
+        <input class="btn btn--form" type="submit" value="Autorizar Pago" onclick="parseAmount()" />
+    </form>
 
-        <div hidden>
-                <label>AuthKey</label>
-                <input type="text" id="AuthHash" name="AuthHash" value="asdhakjshdkjasdasmndajksdkjaskldga8odya9d8yoasyd98asdyaisdhoaisyd0a8sydoashd8oasydoiahdpiashd09ayusidhaos8dy0a8dya08syd0a8ssdsax" />
-        </div>
-      
-    </div>
-      </form>
-      
-      <!-- Footer -->
-      <footer class="container footer text-center">
-         <div class="col-sm-4 col-md-4 col-lg-4">
+    <div id="output"></div>
+    <!-- Footer -->
+    <footer class="container footer text-center">
+        <div class="col-sm-4 col-md-4 col-lg-4">
             <h4>Newsletter</h4>
             <p>Unete a nuestro Newsletter mensual!</p>
             <div class="cd-form-wrapper cd-container">
-               <form class="cd-form">
-                  <input type="email" id="cd-email" class="cd-email" name="cd-email" placeholder="Enter your email address">
-                  <input type="submit" class="cd-submit" value="Submit">
-                  <div class="cd-loading"></div>
-               </form>
-               <div data-type="message" class="cd-response cd-response-error">Ops! Error message here</div>
-               <div data-type="message" class="cd-response-success">
-                  <p>Great! Success message here</p>
-               </div>
-               <div data-type="message" class="cd-response cd-response-notification">Hey! Notification message here</div>
+                <form class="cd-form">
+                    <input type="email" id="cd-email" class="cd-email" name="cd-email" placeholder="Enter your email address">
+                    <input type="submit" class="cd-submit" value="Submit">
+                    <div class="cd-loading"></div>
+                </form>
+                <div data-type="message" class="cd-response cd-response-error">Ops! Error message here</div>
+                <div data-type="message" class="cd-response-success">
+                    <p>Great! Success message here</p>
+                </div>
+                <div data-type="message" class="cd-response cd-response-notification">Hey! Notification message here</div>
             </div>
-         </div>
-         <div class="col-sm-4 col-md-4 col-lg-4">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
             <h4>Sobre Nosotros</h4>
             <p>Quienes Somos</p>
             <p>FAQ</p>
-         </div>
-         <div class="col-sm-4 col-md-4 col-lg-4">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
             <h4>Contactanos</h4>
             <p>info@apurao.com</p>
             <p>Acropolis Center, Suite 607</p>
             <p>(809) 000-0000</p>
-         </div>
-      </footer>
-      <!-- Scripts -->
-      <script src="assets/js/main.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script>
-         function onSuccess(result) {
-            $('#AuthHash').val();
-         }
-         
-         function onFailure(error) {
-           var div = document.getElementById('output');
-           div.innerHTML = "ERROR: " + error.message;
-         }
-         
-         function generateAuthHash() {
-            var MerchantId = $('#RealMerchantID').val();
-            var MerchantName = $('#RealMerchantName').val();
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        function parseAmount(){
+            var checked = $('#Amount').val();
+            var newChecked = checked.split(".").join("");
+            $('#Amount').val(newChecked);
+        }
+    </script>
+    <script src="gs/google.gs">
+        function onSuccess(result) {
+            $('#AuthHash').val(result);
+        }
+
+        function onFailure(error) {
+            var div = document.getElementById('output');
+            div.innerHTML = "ERROR: " + error.message;
+        }
+
+            function generateAuthHash() {
+            var MerchantId = $('#MerchantId').val();
+            var MerchantName = $('#MerchantName').val();
             var MerchantType = $('#MerchantType').val();
-            var CurrencyCode = $('#CurrencyCode');
-            var OrderNumber = $('#OrderNumber');
-            var Amount = $('#Amount').val();
+            var CurrencyCode = $('#CurrencyCode').val();
+            var OrderNumber = $('#OrderNumber').val();
+            var Amount = $('#Amount').val().split('.').join("");
             var ITBIS = $('#ITBIS').val();
-            var ApprovedUrl = "https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?ApprovedUrl=true";
-            var DeclinedUrl = "https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?DeclinedUrl=true";
-            var CancelUrl = "https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?CancelUrl=true";
-            var ResponsePostUrl = "https://script.google.com/macros/s/AKfycbyM17pfmD_cpPFnQKek8ghDurpu-PWVVXZ1eHTN4vpdIP1SCtoo/exec?PostURL=true";
-            var UseCustomField = $('#UseCustomField1').val();
+            var ApprovedUrl = $('#ApprovedUrl').val();
+            var DeclinedUrl = $('#DeclinedUrl').val();
+            var CancelUrl = $('#CancelUrl').val();
+            var ResponsePostUrl = $('#ResponsePostUrl').val();
+            var UseCustomField1 = $('#UseCustomField1').val();
             var CustomField1Label = $('#CustomField1Label').val();
             var CustomField1Value = $('#CustomField1Value').val();
-            var UseCustomField2 = $('#UseCustomField1').val();
+            var UseCustomField2 = $('#UseCustomField2').val();
             var CustomField2Label = $('#CustomField2Label').val();
             var CustomField2Value = $('#CustomField2Value').val();
-            var AuthKey = $('#AuthKey').val();
-            
+            var AuthKey = $('#authKey').val();
+
             google.script.run
-              .withSuccessHandler(onSuccess)
-              .withFailureHandler(onFailure)
-              .generateAuthHash([
-                MerchantId, MerchantName, MerchantType, CurrencyCode,
-                OrderNumber, Amount, ITBIS,
-                ApprovedUrl, DeclinedUrl, CancelUrl, ResponsePostUrl, 
-                UseCustomField , CustomField1Label, CustomField1Value,
-                UseCustomField2, CustomField2Label, CustomField2Value
-              ]);
-         }
-      </script>
-      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   </body>
+           .withSuccessHandler(onSuccess)
+           .withFailureHandler(onFailure)
+           .generateAuthHash([
+                    MerchantId, MerchantName, MerchantType, CurrencyCode,
+                    OrderNumber, Amount, ITBIS,
+                    ApprovedUrl, DeclinedUrl, CancelUrl, ResponsePostUrl,
+                    UseCustomField1, CustomField1Label, CustomField1Value,
+                    UseCustomField2, CustomField2Label, CustomField2Value
+            ]);
+        }
+    </script>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
